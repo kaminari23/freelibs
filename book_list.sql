@@ -55,7 +55,7 @@ INSERT INTO `bag` (`id`, `gid`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `booklist` (
-  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `id` int(5) NOT NULL SERIAL,
   `name` varchar(50) NOT NULL,
   `annotation` text NOT NULL,
   `author` varchar(50) NOT NULL,
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `booklist` (
   `capacity` int(20) NOT NULL,
   `pubdate` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 SERIAL=5 ;
 
 --
 -- Дамп данных таблицы `booklist`
@@ -82,10 +82,10 @@ INSERT INTO `booklist` (`id`, `name`, `annotation`, `author`, `picture`, `capaci
 --
 
 CREATE TABLE IF NOT EXISTS `genres` (
-  `gid` int(11) NOT NULL AUTO_INCREMENT,
+  `gid` int(11) NOT NULL SERIAL,
   `gname` varchar(25) NOT NULL,
   PRIMARY KEY (`gid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 SERIAL=9 ;
 
 --
 -- Дамп данных таблицы `genres`
@@ -119,13 +119,13 @@ CREATE TABLE IF NOT EXISTS `userlib` (
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL SERIAL,
   `uname` varchar(40) NOT NULL,
   `upass` varchar(20) NOT NULL,
   `urole` varchar(20) NOT NULL,
   `upicture` varchar(500) NOT NULL,
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 SERIAL=9 ;
 
 --
 -- Дамп данных таблицы `users`
