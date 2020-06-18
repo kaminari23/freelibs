@@ -1,4 +1,4 @@
-CREATE TABLE  booklist (
+CREATE TABLE booklist (
   id SERIAL,
   name VARCHAR(50) NOT NULL,
   annotation VARCHAR NOT NULL,
