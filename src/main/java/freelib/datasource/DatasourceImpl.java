@@ -53,9 +53,9 @@ public class DatasourceImpl {
 
     private static Connection getSimpleConnection() throws SQLException {
 
-        String dbUrl = "postgres://xmdtmsoqtpcthi:482226fe61d4d219809755fb26027ccaeb067908af2f39969a0dbba5281c8cf8@ec2-54-247-125-38.eu-west-1.compute.amazonaws.com:5432/de67pclagvhmhh?sslmode=require";
-        String username = "xmdtmsoqtpcthi";
-        String password = "482226fe61d4d219809755fb26027ccaeb067908af2f39969a0dbba5281c8cf8";
+        String dbUrl = "postgres://owjooptpiaoocv:3096c3c2000af40d8dbcf01ce44e1c804c80a769ed90738fe48ef47f38366507@ec2-54-247-125-38.eu-west-1.compute.amazonaws.com:5432/dc9pg5lult5tsd";
+        String username = "owjooptpiaoocv";
+        String password = "3096c3c2000af40d8dbcf01ce44e1c804c80a769ed90738fe48ef47f38366507";
         return DriverManager.getConnection(dbUrl, username, password);
     }
 
@@ -65,9 +65,9 @@ public class DatasourceImpl {
         dataSource = new ComboPooledDataSource();
         dataSource.setDriverClass("com.postgres.jdbc.Driver");
 
-        dataSource.setJdbcUrl("postgres://xmdtmsoqtpcthi:482226fe61d4d219809755fb26027ccaeb067908af2f39969a0dbba5281c8cf8@ec2-54-247-125-38.eu-west-1.compute.amazonaws.com:5432/de67pclagvhmhh?sslmode=require");
-        dataSource.setUser("xmdtmsoqtpcthi");
-        dataSource.setPassword("482226fe61d4d219809755fb26027ccaeb067908af2f39969a0dbba5281c8cf8");
+        dataSource.setJdbcUrl("postgres://owjooptpiaoocv:3096c3c2000af40d8dbcf01ce44e1c804c80a769ed90738fe48ef47f38366507@ec2-54-247-125-38.eu-west-1.compute.amazonaws.com:5432/dc9pg5lult5tsd");
+        dataSource.setUser("owjooptpiaoocv");
+        dataSource.setPassword("3096c3c2000af40d8dbcf01ce44e1c804c80a769ed90738fe48ef47f38366507");
 
         dataSource.setMinPoolSize(100);
         dataSource.setMaxPoolSize(1000);
