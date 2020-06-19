@@ -3,9 +3,8 @@ package freelib.datasource;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 import java.beans.PropertyVetoException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+
 
 public class DatasourceImpl {
     private static DatasourceImpl data_source;
@@ -36,7 +35,7 @@ public class DatasourceImpl {
             e.printStackTrace();
             /**/
             try {
-                Class.forName("org.postgres.jdbc.Driver");
+                Class.forName("org.postgresql.Driver");
 //                Class.forName("com.mysql.jdbc.Driver");
                 connection = getSimpleConnection();
             } catch (ClassNotFoundException eeee) {
@@ -64,7 +63,7 @@ public class DatasourceImpl {
 
     private static ComboPooledDataSource getPoolConnection() throws PropertyVetoException {
         dataSource = new ComboPooledDataSource();
-        dataSource.setDriverClass("org.postgres.jdbc.Driver");
+        dataSource.setDriverClass("org.postgresql.Driver");
 
         dataSource.setJdbcUrl("postgres://owjooptpiaoocv:3096c3c2000af40d8dbcf01ce44e1c804c80a769ed90738fe48ef47f38366507@ec2-54-247-125-38.eu-west-1.compute.amazonaws.com:5432/dc9pg5lult5tsd");
         dataSource.setUser("owjooptpiaoocv");
