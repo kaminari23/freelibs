@@ -26,11 +26,11 @@
         <artifactId>javax.servlet-api</artifactId>
         <version>3.1.0</version>
     </dependency>
-        <dependency>
+<dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>9.3-1100-jdbc41</version>
-        </dependency>
+            <version>9.4.1208</version>
+            </dependency>
     <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>
