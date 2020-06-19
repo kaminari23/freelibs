@@ -36,7 +36,7 @@ public class DatasourceImpl {
             e.printStackTrace();
             /**/
             try {
-                Class.forName("com.postgres.jdbc.Driver");
+                Class.forName("com.postgresql.jdbc.Driver");
                 connection = getSimpleConnection();
             } catch (ClassNotFoundException eeee) {
                 /**/
@@ -63,7 +63,7 @@ public class DatasourceImpl {
 
     private static ComboPooledDataSource getPoolConnection() throws PropertyVetoException {
         dataSource = new ComboPooledDataSource();
-        dataSource.setDriverClass("com.postgres.jdbc.Driver");
+        dataSource.setDriverClass("com.postgresql.jdbc.Driver");
 
         dataSource.setJdbcUrl("postgres://owjooptpiaoocv:3096c3c2000af40d8dbcf01ce44e1c804c80a769ed90738fe48ef47f38366507@ec2-54-247-125-38.eu-west-1.compute.amazonaws.com:5432/dc9pg5lult5tsd");
         dataSource.setUser("owjooptpiaoocv");
