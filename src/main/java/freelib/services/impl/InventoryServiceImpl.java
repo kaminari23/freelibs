@@ -77,7 +77,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
 
                 arrayList.add(new FreelibDTO(id,name,annotation,author,picture,capacity,pubdate));
-
+                connection.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -112,7 +112,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
 
                 arrayList.add(new FreelibDTO(id,name,annotation,author,picture,capacity,pubdate));
-
+                connection.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -150,7 +150,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
 
                 arrayList.add(new FreelibDTO(id,name,annotation,author,picture,capacity,pubdate));
-
+                connection.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -185,7 +185,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
 
                 arrayList.add(new FreelibDTO(id,name,annotation,author,picture,capacity,pubdate));
-
+                connection.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -208,7 +208,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                 String urole = resultSet.getString("urole");
                 String upicture = resultSet.getString("upicture");
                 invent.add(new UserDTO(uid,uname, upass, urole, upicture));
-
+                connection.close();
             }
 
         } catch (SQLException e) {
@@ -235,7 +235,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                 String capacity = resultSet.getString("capacity");
                 String pubdate = resultSet.getString("pubdate");
                 invent.add(new FreelibDTO(id,name, annotation, author, picture, capacity, pubdate));
-
+                connection.close();
             }
 
         } catch (SQLException e) {
@@ -262,7 +262,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                 String capacity = resultSet.getString("capacity");
                 String pubdate = resultSet.getString("pubdate");
                 invent.add(new FreelibDTO(id,name, annotation, author, picture, capacity, pubdate));
-
+                connection.close();
             }
 
         } catch (SQLException e) {
