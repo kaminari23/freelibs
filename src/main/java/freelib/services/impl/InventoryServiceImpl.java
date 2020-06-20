@@ -114,11 +114,11 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-<<<<<<< HEAD
-//        connection.close();
-=======
 
->>>>>>> parent of e49fa02... .
+//        connection.close();
+
+
+
         return arrayList;
     }
     public List<FreelibDTO> getDetect() {
@@ -152,10 +152,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-<<<<<<< HEAD
-//        connection.close();
-=======
->>>>>>> parent of e49fa02... .
+
         return arrayList;
     }
     public List<FreelibDTO> getbyGenre(int gid) {
@@ -189,10 +186,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-<<<<<<< HEAD
-//        connection.close();
-=======
->>>>>>> parent of e49fa02... .
+
         return arrayList;
     }
     public List<UserDTO> findUser(String uname, String upass){
@@ -216,10 +210,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-<<<<<<< HEAD
-//        connection.close();
-=======
->>>>>>> parent of e49fa02... .
+
         return invent;
     }
 
@@ -246,10 +237,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-<<<<<<< HEAD
-//        connection.close();
-=======
->>>>>>> parent of e49fa02... .
+
         return invent;
     }
     public List<FreelibDTO> getByGen(int gid){
@@ -276,10 +264,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-<<<<<<< HEAD
-//        connection.close();
-=======
->>>>>>> parent of e49fa02... .
+
         return invent;
     }
     @Override
