@@ -92,8 +92,8 @@ public class DatasourceImpl {
         dataSource.setUser(username);
         dataSource.setPassword(password);
 
-        dataSource.setMinPoolSize(100);
-        dataSource.setMaxPoolSize(1000);
+        dataSource.setMinPoolSize(1);
+        dataSource.setMaxPoolSize(20);
         dataSource.setAcquireIncrement(5);
         return dataSource;
     }
