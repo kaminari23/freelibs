@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,12 +19,7 @@ public class LoginController extends HttpServlet {
         HttpSession session = request.getSession();
         String uname = (String) session.getAttribute("uname");
         String upass = (String) session.getAttribute("upass");
-        List<UserDTO> itemByRequest = null;
-        try {
-            itemByRequest = InventoryServiceImpl.getInstance().findUser(uname, upass);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+        List<UserDTO> itemByRequest = InventoryServiceImpl.getInstance().findUser(uname, upass);
 //        List<UserDTO> item = (List<UserDTO>) session.getAttribute("item");
        List<UserDTO> item = new ArrayList<>();
         item.addAll(itemByRequest);

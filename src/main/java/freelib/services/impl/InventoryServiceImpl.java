@@ -53,12 +53,11 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         }
         return arrayList;
     }
-    public List<FreelibDTO> getEver() throws SQLException {
+    public List<FreelibDTO> getEver() {
         List <FreelibDTO> arrayList = new ArrayList();
-        DatasourceImpl data_source = DatasourceImpl.getInstance();
-        Connection connection = data_source.getConnection();
         try{
-
+            DatasourceImpl data_source = DatasourceImpl.getInstance();
+            Connection connection = data_source.getConnection();
             PreparedStatement statement = null;
 
             statement = connection.prepareStatement("SELECT * FROM booklist");
@@ -81,14 +80,14 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        connection.close();
         return arrayList;
     }
-    public List<FreelibDTO> getScifi() throws SQLException {
+    public List<FreelibDTO> getScifi() {
         List <FreelibDTO> arrayList = new ArrayList();
-        DatasourceImpl data_source = DatasourceImpl.getInstance();
-        Connection connection = data_source.getConnection();
         try{
+            DatasourceImpl data_source = DatasourceImpl.getInstance();
+            Connection connection = data_source.getConnection();
+
             PreparedStatement statement = null;
             int gid = 2;
             statement = connection.prepareStatement("SELECT b . * ,  g.gname \n" +
@@ -115,15 +114,18 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+<<<<<<< HEAD
 //        connection.close();
+=======
+
+>>>>>>> parent of e49fa02... .
         return arrayList;
     }
-    public List<FreelibDTO> getDetect() throws SQLException {
+    public List<FreelibDTO> getDetect() {
         List <FreelibDTO> arrayList = new ArrayList();
-        DatasourceImpl data_source = DatasourceImpl.getInstance();
-        Connection connection = data_source.getConnection();
         try{
-
+            DatasourceImpl data_source = DatasourceImpl.getInstance();
+            Connection connection = data_source.getConnection();
             PreparedStatement statement = null;
             int gid = 7;
             statement = connection.prepareStatement("SELECT b . * ,  g.gname \n" +
@@ -150,15 +152,17 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+<<<<<<< HEAD
 //        connection.close();
+=======
+>>>>>>> parent of e49fa02... .
         return arrayList;
     }
-    public List<FreelibDTO> getbyGenre(int gid) throws SQLException {
+    public List<FreelibDTO> getbyGenre(int gid) {
         List <FreelibDTO> arrayList = new ArrayList();
-        DatasourceImpl data_source = DatasourceImpl.getInstance();
-        Connection connection = data_source.getConnection();
         try{
-
+            DatasourceImpl data_source = DatasourceImpl.getInstance();
+            Connection connection = data_source.getConnection();
             PreparedStatement statement = null;
 
             statement = connection.prepareStatement("SELECT b . * , g.gname \n" +
@@ -185,10 +189,13 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+<<<<<<< HEAD
 //        connection.close();
+=======
+>>>>>>> parent of e49fa02... .
         return arrayList;
     }
-    public List<UserDTO> findUser(String uname, String upass) throws SQLException {
+    public List<UserDTO> findUser(String uname, String upass){
         List<UserDTO> invent = new ArrayList<>();
         Connection connection = data_source.getConnection();
         PreparedStatement statement = null;
@@ -209,11 +216,14 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+<<<<<<< HEAD
 //        connection.close();
+=======
+>>>>>>> parent of e49fa02... .
         return invent;
     }
 
-    public List<FreelibDTO> getByName(String name) throws SQLException {
+    public List<FreelibDTO> getByName(String name){
         List<FreelibDTO> invent = new ArrayList<>();
         Connection connection = data_source.getConnection();
         PreparedStatement statement = null;
@@ -236,10 +246,13 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+<<<<<<< HEAD
 //        connection.close();
+=======
+>>>>>>> parent of e49fa02... .
         return invent;
     }
-    public List<FreelibDTO> getByGen(int gid) throws SQLException {
+    public List<FreelibDTO> getByGen(int gid){
         List<FreelibDTO> invent = new ArrayList<>();
         Connection connection = data_source.getConnection();
         PreparedStatement statement = null;
@@ -247,7 +260,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
             statement = connection.prepareStatement("SELECT * FROM booklist INNER JOIN bag ON WHERE gid LIKE ?");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
-
+            connection.close();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
@@ -263,7 +276,10 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+<<<<<<< HEAD
 //        connection.close();
+=======
+>>>>>>> parent of e49fa02... .
         return invent;
     }
     @Override
