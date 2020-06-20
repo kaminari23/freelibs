@@ -45,6 +45,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                 String type = result_set.getString("Type");
                 arrayList.add(new InventoryDTO(id,articul,name,picture,price,material,equipment,cooling,
                         diameter,currency,description,type));
+                connection.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -72,6 +73,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
 
                 arrayList.add(new FreelibDTO(id,name,annotation,author,picture,capacity,pubdate));
+                connection.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -83,6 +85,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         try{
             DatasourceImpl data_source = DatasourceImpl.getInstance();
             Connection connection = data_source.getConnection();
+
             PreparedStatement statement = null;
             int gid = 2;
             statement = connection.prepareStatement("SELECT b . * ,  g.gname \n" +
@@ -103,10 +106,12 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
 
                 arrayList.add(new FreelibDTO(id,name,annotation,author,picture,capacity,pubdate));
+                connection.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return arrayList;
     }
     public List<FreelibDTO> getDetect() {
@@ -134,6 +139,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
 
                 arrayList.add(new FreelibDTO(id,name,annotation,author,picture,capacity,pubdate));
+                connection.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -165,6 +171,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
 
                 arrayList.add(new FreelibDTO(id,name,annotation,author,picture,capacity,pubdate));
+                connection.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -185,6 +192,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                 String urole = resultSet.getString("urole");
                 String upicture = resultSet.getString("upicture");
                 invent.add(new UserDTO(uid,uname, upass, urole, upicture));
+                connection.close();
             }
 
         } catch (SQLException e) {
@@ -209,6 +217,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                 String capacity = resultSet.getString("capacity");
                 String pubdate = resultSet.getString("pubdate");
                 invent.add(new FreelibDTO(id,name, annotation, author, picture, capacity, pubdate));
+                connection.close();
             }
 
         } catch (SQLException e) {
@@ -233,6 +242,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                 String capacity = resultSet.getString("capacity");
                 String pubdate = resultSet.getString("pubdate");
                 invent.add(new FreelibDTO(id,name, annotation, author, picture, capacity, pubdate));
+                connection.close();
             }
 
         } catch (SQLException e) {
@@ -252,6 +262,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
             statement = connection.prepareStatement("DELETE FROM adviser_list.advisedto WHERE advisedto.id = ?");
             statement.setInt(1, id);
             statement.executeUpdate();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -280,6 +291,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                 String type = result_set.getString("Type");
                 item.add(new InventoryDTO(id, articul, name, picture, price,material,
                         equipment,cooling,diameter,currency,description,type));
+                connection.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -388,6 +400,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                 statement.setString(4,urole);
 
                 statement.executeUpdate();
+            connection.close();
         } catch(SQLException e) {
             e.printStackTrace();
         }
