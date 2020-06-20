@@ -30,7 +30,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
             Statement statement = connection.createStatement();
             String sql = "SELECT * FROM advisedto";
             ResultSet result_set = statement.executeQuery(sql);
-            connection.close();
+//            connection.close();
             while(result_set.next()){
                 int id = result_set.getInt("id");
                 String name = result_set.getString("Name");
@@ -81,7 +81,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        connection.close();
+//        connection.close();
         return arrayList;
     }
     public List<FreelibDTO> getScifi() throws SQLException {
@@ -115,7 +115,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        connection.close();
+//        connection.close();
         return arrayList;
     }
     public List<FreelibDTO> getDetect() throws SQLException {
@@ -150,7 +150,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        connection.close();
+//        connection.close();
         return arrayList;
     }
     public List<FreelibDTO> getbyGenre(int gid) throws SQLException {
@@ -185,7 +185,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        connection.close();
+//        connection.close();
         return arrayList;
     }
     public List<UserDTO> findUser(String uname, String upass) throws SQLException {
@@ -209,7 +209,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        connection.close();
+//        connection.close();
         return invent;
     }
 
@@ -236,7 +236,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        connection.close();
+//        connection.close();
         return invent;
     }
     public List<FreelibDTO> getByGen(int gid) throws SQLException {
@@ -263,7 +263,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        connection.close();
+//        connection.close();
         return invent;
     }
     @Override
@@ -278,7 +278,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
             statement = connection.prepareStatement("DELETE FROM adviser_list.advisedto WHERE advisedto.id = ?");
             statement.setInt(1, id);
             statement.executeUpdate();
-            connection.close();
+//            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -307,101 +307,13 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                 String type = result_set.getString("Type");
                 item.add(new InventoryDTO(id, articul, name, picture, price,material,
                         equipment,cooling,diameter,currency,description,type));
-                connection.close();
+//                connection.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return item;
     }
-
-    public void updateArticul(int id, String entity) {
-        Connection connection = data_source.getConnection();
-        PreparedStatement statement = null;
-            try { statement = connection.prepareStatement("UPDATE adviser_list.advisedto SET Articul = ? WHERE advisedto.id = ?");
-                statement.setString(1, entity);
-                statement.setInt(2, id);
-                statement.executeUpdate(); } catch (SQLException e) { e.printStackTrace(); } }
-
-    public void updateName(int id, String entity) {
-        Connection connection = data_source.getConnection();
-        PreparedStatement statement = null;
-        try { statement = connection.prepareStatement("UPDATE adviser_list.advisedto SET Name = ? WHERE advisedto.id = ?");
-            statement.setString(1, entity);
-            statement.setInt(2, id);
-            statement.executeUpdate(); } catch (SQLException e) { e.printStackTrace(); } }
-
-    public void updatePicture(int id, String entity) {
-        Connection connection = data_source.getConnection();
-        PreparedStatement statement = null;
-        try { statement = connection.prepareStatement("UPDATE adviser_list.advisedto SET Picture = ? WHERE advisedto.id = ?");
-            statement.setString(1, entity);
-            statement.setInt(2, id);
-            statement.executeUpdate(); } catch (SQLException e) { e.printStackTrace(); } }
-
-    public void updatePrice(int id, String entity) {
-        Connection connection = data_source.getConnection();
-        PreparedStatement statement = null;
-        try { statement = connection.prepareStatement("UPDATE adviser_list.advisedto SET Price = ? WHERE advisedto.id = ?");
-            statement.setString(1, entity);
-            statement.setInt(2, id);
-            statement.executeUpdate(); } catch (SQLException e) { e.printStackTrace(); } }
-
-    public void updateMaterial(int id, String entity) {
-        Connection connection = data_source.getConnection();
-        PreparedStatement statement = null;
-        try { statement = connection.prepareStatement("UPDATE adviser_list.advisedto SET Material = ? WHERE advisedto.id = ?");
-            statement.setString(1, entity);
-            statement.setInt(2, id);
-            statement.executeUpdate(); } catch (SQLException e) { e.printStackTrace(); } }
-
-    public void updateEquipment(int id, String entity) {
-        Connection connection = data_source.getConnection();
-        PreparedStatement statement = null;
-        try { statement = connection.prepareStatement("UPDATE adviser_list.advisedto SET Equipment = ? WHERE advisedto.id = ?");
-            statement.setString(1, entity);
-            statement.setInt(2, id);
-            statement.executeUpdate(); } catch (SQLException e) { e.printStackTrace(); } }
-
-    public void updateCooling(int id, String entity) {
-        Connection connection = data_source.getConnection();
-        PreparedStatement statement = null;
-        try { statement = connection.prepareStatement("UPDATE adviser_list.advisedto SET Cooling = ? WHERE advisedto.id = ?");
-            statement.setString(1, entity);
-            statement.setInt(2, id);
-            statement.executeUpdate(); } catch (SQLException e) { e.printStackTrace(); } }
-
-    public void updateDiameter(int id, String entity) {
-        Connection connection = data_source.getConnection();
-        PreparedStatement statement = null;
-        try { statement = connection.prepareStatement("UPDATE adviser_list.advisedto SET Diameter = ? WHERE advisedto.id = ?");
-            statement.setString(1, entity);
-            statement.setInt(2, id);
-            statement.executeUpdate(); } catch (SQLException e) { e.printStackTrace(); } }
-
-    public void updateCurrency(int id, String entity) {
-        Connection connection = data_source.getConnection();
-        PreparedStatement statement = null;
-        try { statement = connection.prepareStatement("UPDATE adviser_list.advisedto SET Currency = ? WHERE advisedto.id = ?");
-            statement.setString(1, entity);
-            statement.setInt(2, id);
-            statement.executeUpdate(); } catch (SQLException e) { e.printStackTrace(); } }
-
-    public void updateDescription(int id, String entity) {
-        Connection connection = data_source.getConnection();
-        PreparedStatement statement = null;
-        try { statement = connection.prepareStatement("UPDATE adviser_list.advisedto SET Description = ? WHERE advisedto.id = ?");
-            statement.setString(1, entity);
-            statement.setInt(2, id);
-            statement.executeUpdate(); } catch (SQLException e) { e.printStackTrace(); } }
-
-    public void updateType(int id, String entity) {
-        Connection connection = data_source.getConnection();
-        PreparedStatement statement = null;
-        try { statement = connection.prepareStatement("UPDATE adviser_list.advisedto SET Type = ? WHERE advisedto.id = ?");
-            statement.setString(1, entity);
-            statement.setInt(2, id);
-            statement.executeUpdate(); } catch (SQLException e) { e.printStackTrace(); } }
 
     public void addUser(String uname, String upass){
         Connection connection = data_source.getConnection();
