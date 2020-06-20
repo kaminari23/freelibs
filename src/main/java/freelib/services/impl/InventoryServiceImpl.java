@@ -94,7 +94,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                     "FROM booklist b \n" +
                     "INNER JOIN bag bg ON b.id = bg.id\n" +
                     "INNER JOIN genres g ON g.gid = bg.gid\n" +
-                    "WHERE g.gid LIKE ?");
+                    "WHERE g.gid=?");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
             connection.close();
@@ -132,7 +132,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                     "FROM booklist b \n" +
                     "INNER JOIN bag bg ON b.id = bg.id\n" +
                     "INNER JOIN genres g ON g.gid = bg.gid\n" +
-                    "WHERE g.gid LIKE ?");
+                    "WHERE g.gid=?");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
             connection.close();
@@ -166,7 +166,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                     "FROM booklist b \n" +
                     "INNER JOIN bag bg ON b.id = bg.id\n" +
                     "INNER JOIN genres g ON g.gid = bg.gid\n" +
-                    "WHERE g.gid LIKE ?");
+                    "WHERE g.gid=?");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
             connection.close();
@@ -245,7 +245,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         Connection connection = data_source.getConnection();
         PreparedStatement statement = null;
         try {
-            statement = connection.prepareStatement("SELECT * FROM booklist INNER JOIN bag ON WHERE gid LIKE ?");
+            statement = connection.prepareStatement("SELECT * FROM booklist INNER JOIN bag ON WHERE gid=?");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
             connection.close();
