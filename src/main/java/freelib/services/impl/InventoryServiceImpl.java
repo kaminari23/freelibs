@@ -81,7 +81,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-//        connection.close();
+        connection.close();
         return arrayList;
     }
     public List<FreelibDTO> getScifi() throws SQLException {
