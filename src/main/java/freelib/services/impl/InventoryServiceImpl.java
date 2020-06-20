@@ -45,7 +45,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                 String type = result_set.getString("Type");
                 arrayList.add(new InventoryDTO(id,articul,name,picture,price,material,equipment,cooling,
                         diameter,currency,description,type));
-                connection.close();
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -60,7 +60,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
             PreparedStatement statement = null;
 
             statement = connection.prepareStatement("SELECT * FROM booklist");
-
+            connection.close();
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
@@ -73,7 +73,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
 
                 arrayList.add(new FreelibDTO(id,name,annotation,author,picture,capacity,pubdate));
-                connection.close();
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
