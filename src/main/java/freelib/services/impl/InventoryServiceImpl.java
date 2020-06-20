@@ -24,9 +24,10 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
     @Override
     public List<InventoryDTO> getAll() {
         List <InventoryDTO> arrayList = new ArrayList();
+        DatasourceImpl data_source = DatasourceImpl.getInstance();
+        Connection connection = data_source.getConnection();
         try{
-            DatasourceImpl data_source = DatasourceImpl.getInstance();
-            Connection connection = data_source.getConnection();
+
             Statement statement = connection.createStatement();
             String sql = "SELECT * FROM advisedto";
             ResultSet result_set = statement.executeQuery(sql);
@@ -55,15 +56,16 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
     }
     public List<FreelibDTO> getEver() {
         List <FreelibDTO> arrayList = new ArrayList();
+        DatasourceImpl data_source = DatasourceImpl.getInstance();
+        Connection connection = data_source.getConnection();
         try{
-            DatasourceImpl data_source = DatasourceImpl.getInstance();
-            Connection connection = data_source.getConnection();
+
             PreparedStatement statement = null;
 
             statement = connection.prepareStatement("SELECT * FROM booklist");
 
             ResultSet resultSet = statement.executeQuery();
-            connection.close();
+
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
@@ -84,9 +86,10 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
     }
     public List<FreelibDTO> getScifi() {
         List <FreelibDTO> arrayList = new ArrayList();
+        DatasourceImpl data_source = DatasourceImpl.getInstance();
+        Connection connection = data_source.getConnection();
         try{
-            DatasourceImpl data_source = DatasourceImpl.getInstance();
-            Connection connection = data_source.getConnection();
+
 
             PreparedStatement statement = null;
             int gid = 2;
@@ -135,7 +138,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                     "WHERE g.gid=?");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
-            connection.close();
+
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
@@ -157,9 +160,10 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
     }
     public List<FreelibDTO> getbyGenre(int gid) {
         List <FreelibDTO> arrayList = new ArrayList();
+        DatasourceImpl data_source = DatasourceImpl.getInstance();
+        Connection connection = data_source.getConnection();
         try{
-            DatasourceImpl data_source = DatasourceImpl.getInstance();
-            Connection connection = data_source.getConnection();
+
             PreparedStatement statement = null;
 
             statement = connection.prepareStatement("SELECT b . * , g.gname \n" +
@@ -169,7 +173,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                     "WHERE g.gid=?");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
-            connection.close();
+
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
@@ -198,7 +202,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
             statement.setString(1,uname);
             statement.setString(2,upass);
             ResultSet resultSet = statement.executeQuery();
-            connection.close();
+
             while (resultSet.next()) {
                 int uid = resultSet.getInt("uid");
                 String urole = resultSet.getString("urole");
@@ -222,7 +226,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
             statement = connection.prepareStatement("SELECT * FROM booklist WHERE name LIKE ?");
             statement.setString(1,name);
             ResultSet resultSet = statement.executeQuery();
-            connection.close();
+
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String annotation = resultSet.getString("annotation");
@@ -248,7 +252,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
             statement = connection.prepareStatement("SELECT * FROM booklist INNER JOIN bag ON WHERE gid=?");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
-            connection.close();
+
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
@@ -329,7 +333,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                 statement.setString(4,urole);
 
                 statement.executeUpdate();
-            connection.close();
+
         } catch(SQLException e) {
             e.printStackTrace();
         }
