@@ -30,6 +30,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
             Statement statement = connection.createStatement();
             String sql = "SELECT * FROM advisedto";
             ResultSet result_set = statement.executeQuery(sql);
+            connection.close();
             while(result_set.next()){
                 int id = result_set.getInt("id");
                 String name = result_set.getString("Name");
@@ -60,8 +61,9 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
             PreparedStatement statement = null;
 
             statement = connection.prepareStatement("SELECT * FROM booklist");
-            connection.close();
+
             ResultSet resultSet = statement.executeQuery();
+            connection.close();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
@@ -95,6 +97,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                     "WHERE g.gid LIKE ?");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
+            connection.close();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
@@ -106,7 +109,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
 
                 arrayList.add(new FreelibDTO(id,name,annotation,author,picture,capacity,pubdate));
-                connection.close();
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -128,6 +131,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                     "WHERE g.gid LIKE ?");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
+            connection.close();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
@@ -139,7 +143,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
 
                 arrayList.add(new FreelibDTO(id,name,annotation,author,picture,capacity,pubdate));
-                connection.close();
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -160,6 +164,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                     "WHERE g.gid LIKE ?");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
+            connection.close();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
@@ -171,7 +176,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
 
                 arrayList.add(new FreelibDTO(id,name,annotation,author,picture,capacity,pubdate));
-                connection.close();
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -187,12 +192,13 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
             statement.setString(1,uname);
             statement.setString(2,upass);
             ResultSet resultSet = statement.executeQuery();
+            connection.close();
             while (resultSet.next()) {
                 int uid = resultSet.getInt("uid");
                 String urole = resultSet.getString("urole");
                 String upicture = resultSet.getString("upicture");
                 invent.add(new UserDTO(uid,uname, upass, urole, upicture));
-                connection.close();
+
             }
 
         } catch (SQLException e) {
@@ -209,6 +215,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
             statement = connection.prepareStatement("SELECT * FROM booklist WHERE name LIKE ?");
             statement.setString(1,name);
             ResultSet resultSet = statement.executeQuery();
+            connection.close();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String annotation = resultSet.getString("annotation");
@@ -217,7 +224,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                 String capacity = resultSet.getString("capacity");
                 String pubdate = resultSet.getString("pubdate");
                 invent.add(new FreelibDTO(id,name, annotation, author, picture, capacity, pubdate));
-                connection.close();
+
             }
 
         } catch (SQLException e) {
@@ -233,6 +240,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
             statement = connection.prepareStatement("SELECT * FROM booklist INNER JOIN bag ON WHERE gid LIKE ?");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
+            connection.close();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
@@ -242,7 +250,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                 String capacity = resultSet.getString("capacity");
                 String pubdate = resultSet.getString("pubdate");
                 invent.add(new FreelibDTO(id,name, annotation, author, picture, capacity, pubdate));
-                connection.close();
+
             }
 
         } catch (SQLException e) {
