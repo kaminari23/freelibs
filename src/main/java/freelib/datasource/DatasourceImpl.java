@@ -78,11 +78,11 @@ public class DatasourceImpl {
         dataSource.setJdbcUrl(dbUrl);
         dataSource.setUser(username);
         dataSource.setPassword(password);
-        pool.setMinPoolSize(2);
-        pool.setAcquireIncrement(1);
-        pool.setMaxPoolSize(5);
-        pool.setMaxStatements(50);
-        pool.setMaxStatementsPerConnection(20);
+
+
+
+        dataSource.setMaxStatements(50);
+        dataSource.setMaxStatementsPerConnection(20);
         dataSource.setMinPoolSize(2);
         dataSource.setMaxPoolSize(5);
         dataSource.setAcquireIncrement(1);
