@@ -10,6 +10,7 @@ import java.io.IOException;
 import freelib.DTO.FreelibDTO;
 import freelib.services.impl.InventoryServiceImpl;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,10 +18,20 @@ import java.util.List;
 public class GetAllController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        List<FreelibDTO> itemByRequest = InventoryServiceImpl.getInstance().getScifi();
+        List<FreelibDTO> itemByRequest = null;
+        try {
+            itemByRequest = InventoryServiceImpl.getInstance().getScifi();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         List<FreelibDTO> item = new ArrayList<>();
         item.addAll(itemByRequest);
-        List<FreelibDTO> itemByR = InventoryServiceImpl.getInstance().getDetect();
+        List<FreelibDTO> itemByR = null;
+        try {
+            itemByR = InventoryServiceImpl.getInstance().getDetect();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         List<FreelibDTO> itemR = new ArrayList<>();
         itemR.addAll(itemByR);
 
@@ -35,7 +46,12 @@ public class GetAllController extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         String name = request.getParameter("name");
 
-        List<FreelibDTO> itemByRequest = InventoryServiceImpl.getInstance().getByName(name);
+        List<FreelibDTO> itemByRequest = null;
+        try {
+            itemByRequest = InventoryServiceImpl.getInstance().getByName(name);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         List<FreelibDTO> item = new ArrayList<>();
         item.addAll(itemByRequest);
         request.setAttribute("item", item);

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,7 @@ import java.util.List;
 @WebFilter(filterName = "auth_filter", urlPatterns = "/login/*")
 public class AuthFilter extends BaseHttpFilter {
     @Override
-    public void doFilter(HttpServletRequest servletRequest, HttpServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+    public void doFilter(HttpServletRequest servletRequest, HttpServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException, SQLException {
         String uname = servletRequest.getParameter("uname");
         String upass = servletRequest.getParameter("upass");
         List<UserDTO> itemByRequest = InventoryServiceImpl.getInstance().findUser(uname, upass);

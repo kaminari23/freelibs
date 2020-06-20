@@ -10,6 +10,7 @@ import java.io.IOException;
 import freelib.DTO.FreelibDTO;
 import freelib.services.impl.InventoryServiceImpl;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,12 @@ import java.util.List;
 public class BooksController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        List<FreelibDTO> itemByRequest = InventoryServiceImpl.getInstance().getEver();
+        List<FreelibDTO> itemByRequest = null;
+        try {
+            itemByRequest = InventoryServiceImpl.getInstance().getEver();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
 
         List<FreelibDTO> item = new ArrayList<>();
         item.addAll(itemByRequest);
@@ -31,7 +37,12 @@ public class BooksController extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         int gid = Integer.parseInt(request.getParameter("gid"));
 
-        List<FreelibDTO> itemByRequest = InventoryServiceImpl.getInstance().getbyGenre(gid);
+        List<FreelibDTO> itemByRequest = null;
+        try {
+            itemByRequest = InventoryServiceImpl.getInstance().getbyGenre(gid);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         List<FreelibDTO> item = new ArrayList<>();
         item.addAll(itemByRequest);
         if(item.isEmpty()) {
