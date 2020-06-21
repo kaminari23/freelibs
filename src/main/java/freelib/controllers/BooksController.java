@@ -17,7 +17,7 @@ import java.util.List;
 public class BooksController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("utf-8");
-        request.setCharacterEncoding("windows-1251");
+        request.setCharacterEncoding("utf-8");
         List<FreelibDTO> itemByRequest = InventoryServiceImpl.getInstance().getEver();
 
         List<FreelibDTO> item = new ArrayList<>();
@@ -29,7 +29,7 @@ public class BooksController extends HttpServlet {
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("utf-8");
-        request.setCharacterEncoding("windows-1251");
+        request.setCharacterEncoding("utf-8");
         int gid = Integer.parseInt(request.getParameter("gid"));
 
         List<FreelibDTO> itemByRequest = InventoryServiceImpl.getInstance().getbyGenre(gid);

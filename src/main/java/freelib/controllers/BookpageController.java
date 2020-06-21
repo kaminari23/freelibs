@@ -18,12 +18,13 @@ public class BookpageController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("utf-8");
-        request.setCharacterEncoding("windows-1251");
+        request.setCharacterEncoding("utf-8");
         String name = request.getParameter("name");
 
         List<FreelibDTO> itemByRequest = InventoryServiceImpl.getInstance().getByName(name);
         List<FreelibDTO> item = new ArrayList<>();
         item.addAll(itemByRequest);
+
         request.setAttribute("item", item);
         getServletContext().getRequestDispatcher("/pages/common/bookpage.jsp").forward(request, response);
     }

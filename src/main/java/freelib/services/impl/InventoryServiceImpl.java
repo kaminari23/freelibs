@@ -62,7 +62,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
             PreparedStatement statement = null;
 
-            statement = connection.prepareStatement("SELECT * FROM booklist");
+            statement = connection.prepareStatement("SET CHARACTER SET 'utf-8' SET NAMES 'utf-8' SELECT * FROM booklist ");
 
             ResultSet resultSet = statement.executeQuery();
 
@@ -93,7 +93,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
             PreparedStatement statement = null;
             int gid = 2;
-            statement = connection.prepareStatement("SELECT b . * ,  g.gname \n" +
+            statement = connection.prepareStatement("SET CHARACTER SET 'utf-8' SET NAMES 'utf-8' SELECT b . * ,  g.gname \n" +
                     "FROM booklist b \n" +
                     "INNER JOIN bag bg ON b.id = bg.id\n" +
                     "INNER JOIN genres g ON g.gid = bg.gid\n" +
@@ -131,7 +131,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
             Connection connection = data_source.getConnection();
             PreparedStatement statement = null;
             int gid = 7;
-            statement = connection.prepareStatement("SELECT b . * ,  g.gname \n" +
+            statement = connection.prepareStatement("SET CHARACTER SET 'utf-8' SET NAMES 'utf-8' SELECT b . * ,  g.gname \n" +
                     "FROM booklist b \n" +
                     "INNER JOIN bag bg ON b.id = bg.id\n" +
                     "INNER JOIN genres g ON g.gid = bg.gid\n" +
@@ -166,7 +166,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
             PreparedStatement statement = null;
 
-            statement = connection.prepareStatement("SELECT b . * , g.gname \n" +
+            statement = connection.prepareStatement("SET CHARACTER SET 'utf-8' SET NAMES 'utf-8' SELECT b . * , g.gname \n" +
                     "FROM booklist b \n" +
                     "INNER JOIN bag bg ON b.id = bg.id\n" +
                     "INNER JOIN genres g ON g.gid = bg.gid\n" +
@@ -198,7 +198,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         Connection connection = data_source.getConnection();
         PreparedStatement statement = null;
         try {
-            statement = connection.prepareStatement("SELECT * FROM users WHERE uname LIKE ? AND upass LIKE ?");
+            statement = connection.prepareStatement("SET CHARACTER SET 'utf-8' SET NAMES 'utf-8' SELECT * FROM users WHERE uname LIKE ? AND upass LIKE ?");
             statement.setString(1,uname);
             statement.setString(2,upass);
             ResultSet resultSet = statement.executeQuery();
@@ -222,11 +222,11 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         List<FreelibDTO> invent = new ArrayList<>();
         Connection connection = data_source.getConnection();
         PreparedStatement statement = null;
+
         try {
-            statement = connection.prepareStatement("SELECT * FROM booklist WHERE name LIKE ?");
+            statement = connection.prepareStatement("SET CHARACTER SET 'utf-8' SET NAMES 'utf-8' SELECT * FROM booklist WHERE name LIKE ?");
             statement.setString(1,name);
             ResultSet resultSet = statement.executeQuery();
-
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String annotation = resultSet.getString("annotation");
@@ -234,6 +234,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                 String picture = resultSet.getString("picture");
                 String capacity = resultSet.getString("capacity");
                 String pubdate = resultSet.getString("pubdate");
+
                 invent.add(new FreelibDTO(id,name, annotation, author, picture, capacity, pubdate));
                 connection.close();
             }
@@ -249,10 +250,9 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         Connection connection = data_source.getConnection();
         PreparedStatement statement = null;
         try {
-            statement = connection.prepareStatement("SELECT * FROM booklist INNER JOIN bag ON WHERE gid=?");
+            statement = connection.prepareStatement("SET CHARACTER SET 'utf-8' SET NAMES 'utf-8' SELECT * FROM booklist INNER JOIN bag ON WHERE gid=?");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
-
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
