@@ -60,9 +60,10 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         Connection connection = data_source.getConnection();
         try{
 
-
             PreparedStatement statement = null;
-            statement = connection.prepareStatement("SELECT * FROM booklist ");
+
+            statement = connection.prepareStatement("SELECT * FROM booklist  SET CLIENT_ENCODING='windows-1251'");
+
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
@@ -96,7 +97,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                     "FROM booklist b \n" +
                     "INNER JOIN bag bg ON b.id = bg.id\n" +
                     "INNER JOIN genres g ON g.gid = bg.gid\n" +
-                    "WHERE g.gid=? ");
+                    "WHERE g.gid=? SET CLIENT_ENCODING='windows-1251'");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
             connection.close();
