@@ -13,13 +13,13 @@ import java.io.IOException;
 public class RegController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("utf-8");
-        request.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("windows-1251");
         request.getRequestDispatcher("/pages/admin/register.jsp").forward(request, response);
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setCharacterEncoding("utf-8");
-        request.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("windows-1251");
         String uname = request.getParameter("uname");
         String upass = request.getParameter("upass");
 
