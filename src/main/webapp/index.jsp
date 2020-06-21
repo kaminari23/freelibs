@@ -30,7 +30,7 @@
         </button>
     </nav>
 </div>
-<header class="navbar navbar-collapse navbar-inverse navbar-fixed-top navbar-sm py-2 mb-4 outline-gm-dark " id="collapsed">
+<header class="collapse navbar-collapse navbar-inverse navbar-fixed-top navbar-sm py-2 mb-4 outline-gm-dark " id="collapsed">
     <div class="container">
         <div class="row">
             <div class="col-4 ml-auto">
