@@ -16,7 +16,7 @@ import java.util.List;
 @WebServlet(name="login_filter", urlPatterns = "/login/panel")
 public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        response.setCharacterEncoding("windows-1251");
+        response.setCharacterEncoding("utf-8");
         request.setCharacterEncoding("utf-8");
         HttpSession session = request.getSession();
         String uname = (String) session.getAttribute("uname");
