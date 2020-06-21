@@ -48,17 +48,17 @@
             <div class="col-4 ml-auto">
                 <nav>
                     <ul class="menu d-flex justify-content-center" >
-                        <li class="menu__item">
+                        <li class="nav-item">
                             <a href="${pageContext.request.contextPath}/list">
                                 Головна
                             </a>
                         </li>
-                        <li class="menu__item">
+                        <li class="nav=item">
                             <a href="#">
                                 Бібліотека
                             </a>
                         </li>
-                        <li class="menu__item">
+                        <li class="nav-item">
                             <a href="${pageContext.request.contextPath}/books">
                                 Книги
                             </a>
@@ -67,7 +67,7 @@
                 </nav>
             </div>
             <div class="col-4 ml-auto d-flex justify-content-center pr-2 py-1">
-                <form method="post" action="${pageContext.request.contextPath}/list" class=menu__form >
+                <form method="post" action="${pageContext.request.contextPath}/list" class="form-inline my-2 my-lg-0" >
                     <li><input name="name" class="menu__string" type="text" >
                         <button class="menu__lupa"  ><i class="fas fa-search " type="submit"></i></button></li>
                 </form>
