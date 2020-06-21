@@ -17,22 +17,34 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/admin/css/all.min.css">
 </head>
 <body>
-<div class="pos-f-t">
-    <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-            <h4 class="text-white">Collapsed content</h4>
-            <span class="text-muted">Toggleable via the navbar brand.</span>
-        </div>
-    </div>
-    <nav class="navbar navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsed" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
-</div>
-<header class="collapse navbar-collapse navbar-inverse navbar-fixed-top navbar-sm py-2 mb-4 outline-gm-dark " id="collapsed">
-    <div class="container">
+
+<%--    <a class="navbar-brand" href="${pageContext.request.contextPath}/list">Головна</a>--%>
+
+<%--    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">--%>
+<%--        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">--%>
+<%--            <li class="nav-item active">--%>
+<%--                <a class="nav-link" href="${pageContext.request.contextPath}/list">Головна <span class="sr-only">(current)</span></a>--%>
+<%--            </li>--%>
+<%--            <li class="nav-item">--%>
+<%--                <a class="nav-link" href="#">Link</a>--%>
+<%--            </li>--%>
+<%--            <li class="nav-item">--%>
+<%--                <a class="nav-link disabled" href="#">Disabled</a>--%>
+<%--            </li>--%>
+<%--        </ul>--%>
+<%--        <form class="form-inline my-2 my-lg-0">--%>
+<%--            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">--%>
+<%--            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--%>
+<%--        </form>--%>
+<%--    </div>--%>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container" >
         <div class="row">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <div class="col-4 ml-auto">
                 <nav>
                     <ul class="menu d-flex justify-content-center" >
@@ -72,9 +84,10 @@
                     </ul>
                 </nav>
             </div>
+            </div>
         </div>
     </div>
-</header>
+</nav>
 <section class="hello">
     <div class="container">
         <div class="row">
