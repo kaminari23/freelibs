@@ -18,7 +18,7 @@ public class BooksController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("windows-1251");
         request.setCharacterEncoding("windows-1251");
-//        InventoryServiceImpl.getInstance().setEnc();
+        InventoryServiceImpl.getInstance().setEnc();
         List<FreelibDTO> itemByRequest = InventoryServiceImpl.getInstance().getEver();
 
         List<FreelibDTO> item = new ArrayList<>();
@@ -32,7 +32,7 @@ public class BooksController extends HttpServlet {
         response.setCharacterEncoding("windows-1251");
         request.setCharacterEncoding("windows-1251");
         int gid = Integer.parseInt(request.getParameter("gid"));
-//        InventoryServiceImpl.getInstance().setEnc();
+        InventoryServiceImpl.getInstance().setEnc();
         List<FreelibDTO> itemByRequest = InventoryServiceImpl.getInstance().getbyGenre(gid);
         List<FreelibDTO> item = new ArrayList<>();
         item.addAll(itemByRequest);
