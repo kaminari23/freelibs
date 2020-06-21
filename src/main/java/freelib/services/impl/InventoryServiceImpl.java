@@ -54,22 +54,22 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         }
         return arrayList;
     }
-    public List<FreelibDTO> setEnc() {
-        List <FreelibDTO> arrayList = new ArrayList();
-        DatasourceImpl data_source = DatasourceImpl.getInstance();
-        Connection connection = data_source.getConnection();
-        try{
-
-            Statement statement = connection.createStatement();
-            String sql = "SET CLIENT_ENCODING='windows-1251'";
-           statement.executeQuery(sql);
-//            connection.close();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return arrayList;
-    }
+//    public List<FreelibDTO> setEnc() {
+//        List <FreelibDTO> arrayList = new ArrayList();
+//        DatasourceImpl data_source = DatasourceImpl.getInstance();
+//        Connection connection = data_source.getConnection();
+//        try{
+//
+//            Statement statement = connection.createStatement();
+//            String sql = "SET CLIENT_ENCODING='windows-1251'";
+//           statement.executeQuery(sql);
+////            connection.close();
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return arrayList;
+//    }
 
     public List<FreelibDTO> getEver() {
         List <FreelibDTO> arrayList = new ArrayList();
