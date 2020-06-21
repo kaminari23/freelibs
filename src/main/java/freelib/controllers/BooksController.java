@@ -16,9 +16,9 @@ import java.util.List;
 @WebServlet(name="books_controller", urlPatterns = "/books")
 public class BooksController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setCharacterEncoding("windows-1251");
-        request.setCharacterEncoding("windows-1251");
-        InventoryServiceImpl.getInstance().setEnc();
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
+//        InventoryServiceImpl.getInstance().setEnc();
         List<FreelibDTO> itemByRequest = InventoryServiceImpl.getInstance().getEver();
 
         List<FreelibDTO> item = new ArrayList<>();
@@ -29,10 +29,10 @@ public class BooksController extends HttpServlet {
 
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setCharacterEncoding("windows-1251");
-        request.setCharacterEncoding("windows-1251");
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
         int gid = Integer.parseInt(request.getParameter("gid"));
-        InventoryServiceImpl.getInstance().setEnc();
+//        InventoryServiceImpl.getInstance().setEnc();
         List<FreelibDTO> itemByRequest = InventoryServiceImpl.getInstance().getbyGenre(gid);
         List<FreelibDTO> item = new ArrayList<>();
         item.addAll(itemByRequest);
