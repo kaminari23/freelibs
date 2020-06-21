@@ -17,7 +17,28 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/admin/css/all.min.css">
 </head>
 <body>
-
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-center">
+                <li class="active"><a href="">Головна</a></li>
+                <li><a href="">/</a></li>
+                <form method="post" action="${pageContext.request.contextPath}/list" class=menu__form >--%>
+                    <li><input name="name" class="menu__string" type="text" >
+                        <button class="menu__lupa"  ><i class="fas fa-search " type="submit"></i></button></li>
+                </form>
+                <li><a href="">/</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 <%--    <a class="navbar-brand" href="${pageContext.request.contextPath}/list">Головна</a>--%>
 
 <%--    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">--%>
@@ -38,120 +59,120 @@
 <%--        </form>--%>
 <%--    </div>--%>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="container" >
-        <div class="row">
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <div class="col-4 ml-auto">
-                <nav>
-                    <ul class="menu d-flex justify-content-center" >
-                        <li class="nav-item">
-                            <a href="${pageContext.request.contextPath}/list">
-                                Головна
-                            </a>
-                        </li>
-                        <li class="nav=item">
-                            <a href="#">
-                                Бібліотека
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="${pageContext.request.contextPath}/books">
-                                Книги
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-4 ml-auto d-flex justify-content-center pr-2 py-1">
-                <form method="post" action="${pageContext.request.contextPath}/list" class="form-inline my-2 my-lg-0" >
-                    <li><input name="name" class="menu__string" type="text" >
-                        <button class="menu__lupa"  ><i class="fas fa-search " type="submit"></i></button></li>
-                </form>
-            </div>
+<%--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">--%>
+<%--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">--%>
+<%--        <span class="navbar-toggler-icon"></span>--%>
+<%--    </button>--%>
+<%--    <div class="container" >--%>
+<%--        <div class="row">--%>
+<%--            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">--%>
+<%--            <div class="col-4 ml-auto">--%>
+<%--                <nav>--%>
+<%--                    <ul class="menu d-flex justify-content-center" >--%>
+<%--                        <li class="menu__item">--%>
+<%--                            <a href="${pageContext.request.contextPath}/list">--%>
+<%--                                Головна--%>
+<%--                            </a>--%>
+<%--                        </li>--%>
+<%--                        <li class="menu__item">--%>
+<%--                            <a href="#">--%>
+<%--                                Бібліотека--%>
+<%--                            </a>--%>
+<%--                        </li>--%>
+<%--                        <li class="menu__item">--%>
+<%--                            <a href="${pageContext.request.contextPath}/books">--%>
+<%--                                Книги--%>
+<%--                            </a>--%>
+<%--                        </li>--%>
+<%--                    </ul>--%>
+<%--                </nav>--%>
+<%--            </div>--%>
+<%--            <div class="col-4 ml-auto d-flex justify-content-center pr-2 py-1">--%>
+<%--                <form method="post" action="${pageContext.request.contextPath}/list" class=menu__form >--%>
+<%--                    <li><input name="name" class="menu__string" type="text" >--%>
+<%--                        <button class="menu__lupa"  ><i class="fas fa-search " type="submit"></i></button></li>--%>
+<%--                </form>--%>
+<%--            </div>--%>
 
-            <div class="col-4 ml-auto d-flex justify-content-center">
-                <nav>
-                    <ul class="menu">
-                        <li class="menu__login">
-                            <a href="${pageContext.request.contextPath}/pages/admin/admin_login.jsp">
-                                Увійти
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            </div>
-        </div>
-    </div>
-</nav>
-<section class="hello">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="helov d-flex justify-content-center">
-                    <div class="helov__view">
-                        <h1>Freelib —</h1>
-                        <h3>Тут ви можете шукати книги та залишити свою дуже важливу думку!</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="main">
+<%--            <div class="col-4 ml-auto d-flex justify-content-center">--%>
+<%--                <nav>--%>
+<%--                    <ul class="menu">--%>
+<%--                        <li class="menu__login">--%>
+<%--                            <a href="${pageContext.request.contextPath}/pages/admin/admin_login.jsp">--%>
+<%--                                Увійти--%>
+<%--                            </a>--%>
+<%--                        </li>--%>
+<%--                    </ul>--%>
+<%--                </nav>--%>
+<%--            </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</nav>--%>
+<%--<section class="hello">--%>
+<%--    <div class="container">--%>
+<%--        <div class="row">--%>
+<%--            <div class="col-12">--%>
+<%--                <div class="helov d-flex justify-content-center">--%>
+<%--                    <div class="helov__view">--%>
+<%--                        <h1>Freelib —</h1>--%>
+<%--                        <h3>Тут ви можете шукати книги та залишити свою дуже важливу думку!</h3>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</section>--%>
+<%--<section class="main">--%>
 
-    <section class="content">
-        <div class="container">
-            <h1>Останні новинки з жанру Наукова фантастика:</h1>
-            <div class="row">
-                <c:forEach var="items" items="${item}">
-                    <div class="col col-md-2">
-                        <div class="cnt d-flex justify-content-center">
-                            <div class="cnt__item ">
-                                <img src="<c:out value="${items.picture}" />" width=100% height="150px">
-                                    <%--                            <form method="post" action="${pageContext.request.contextPath}/list">--%>
-                                    <%--                                --%>
-                                <form method="post" action="${pageContext.request.contextPath}/bookpage">
-                                    <input hidden name="name" value="<c:out value="${items.name}" />">
-                                    <button type="submit" class="item__redir"><c:out value="${items.name}" /></button>
-                                </form>
-                                    <%--                            </form>--%>
-                                <h3><c:out value="${items.author}" /></h3>
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>
-            </div>
-        </div>
-    </section>
-    <section class="content">
-        <div class="container">
-            <h1>Останні новинки з жанру Детектив:</h1>
-            <div class="row">
-                <c:forEach var="itemr" items="${itemR}">
-                    <div class="col col-md-2">
-                        <div class="cnt d-flex justify-content-center">
-                            <div class="cnt__item ">
-                                <img src="<c:out value="${itemr.picture}" />" width=100% height="150px">
-                                    <%--                            <form method="post" action="${pageContext.request.contextPath}/list">--%>
-                                    <%--                                --%>
-                                <form method="post" action="${pageContext.request.contextPath}/bookpage">
-                                    <input hidden name="name" value="<c:out value="${itemr.name}" />">
-                                    <button type="submit" class="item__redir"><c:out value="${itemr.name}" /></button>
-                                </form>
-                                    <%--                            </form>--%>
-                                <h3><c:out value="${itemr.author}" /></h3>
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>
-            </div>
-        </div>
-    </section>
+<%--    <section class="content">--%>
+<%--        <div class="container">--%>
+<%--            <h1>Останні новинки з жанру Наукова фантастика:</h1>--%>
+<%--            <div class="row">--%>
+<%--                <c:forEach var="items" items="${item}">--%>
+<%--                    <div class="col col-md-2">--%>
+<%--                        <div class="cnt d-flex justify-content-center">--%>
+<%--                            <div class="cnt__item ">--%>
+<%--                                <img src="<c:out value="${items.picture}" />" width=100% height="150px">--%>
+<%--                                    &lt;%&ndash;                            <form method="post" action="${pageContext.request.contextPath}/list">&ndash;%&gt;--%>
+<%--                                    &lt;%&ndash;                                &ndash;%&gt;--%>
+<%--                                <form method="post" action="${pageContext.request.contextPath}/bookpage">--%>
+<%--                                    <input hidden name="name" value="<c:out value="${items.name}" />">--%>
+<%--                                    <button type="submit" class="item__redir"><c:out value="${items.name}" /></button>--%>
+<%--                                </form>--%>
+<%--                                    &lt;%&ndash;                            </form>&ndash;%&gt;--%>
+<%--                                <h3><c:out value="${items.author}" /></h3>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </c:forEach>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </section>--%>
+<%--    <section class="content">--%>
+<%--        <div class="container">--%>
+<%--            <h1>Останні новинки з жанру Детектив:</h1>--%>
+<%--            <div class="row">--%>
+<%--                <c:forEach var="itemr" items="${itemR}">--%>
+<%--                    <div class="col col-md-2">--%>
+<%--                        <div class="cnt d-flex justify-content-center">--%>
+<%--                            <div class="cnt__item ">--%>
+<%--                                <img src="<c:out value="${itemr.picture}" />" width=100% height="150px">--%>
+<%--                                    &lt;%&ndash;                            <form method="post" action="${pageContext.request.contextPath}/list">&ndash;%&gt;--%>
+<%--                                    &lt;%&ndash;                                &ndash;%&gt;--%>
+<%--                                <form method="post" action="${pageContext.request.contextPath}/bookpage">--%>
+<%--                                    <input hidden name="name" value="<c:out value="${itemr.name}" />">--%>
+<%--                                    <button type="submit" class="item__redir"><c:out value="${itemr.name}" /></button>--%>
+<%--                                </form>--%>
+<%--                                    &lt;%&ndash;                            </form>&ndash;%&gt;--%>
+<%--                                <h3><c:out value="${itemr.author}" /></h3>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </c:forEach>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </section>--%>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/pages/admin/js/bootstrap.min.js"></script>
 </body>
