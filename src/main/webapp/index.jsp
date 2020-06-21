@@ -28,13 +28,13 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-center">
-                <li class="active"><a href="">Головна</a></li>
-                <li><a href="">/</a></li>
+                <li class="active"><a href="#">Головна</a></li>
+                <li><a href="#">/</a></li>
                 <form method="post" action="${pageContext.request.contextPath}/list" class=menu__form >--%>
                     <li><input name="name" class="menu__string" type="text" >
                         <button class="menu__lupa"  ><i class="fas fa-search " type="submit"></i></button></li>
                 </form>
-                <li><a href="">/</a></li>
+                <li><a href="#">/</a></li>
             </ul>
         </div>
     </div>
