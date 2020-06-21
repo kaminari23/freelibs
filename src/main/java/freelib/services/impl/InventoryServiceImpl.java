@@ -61,9 +61,9 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         try{
 
             PreparedStatement statement = null;
-
-            statement = connection.prepareStatement("SELECT * FROM booklist SET NAMES 'utf8'");
-
+            String sql = "SET NAMES 'utf8'";
+            statement = connection.prepareStatement("SELECT * FROM booklist ");
+            statement.executeQuery(sql);
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
@@ -97,7 +97,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                     "FROM booklist b \n" +
                     "INNER JOIN bag bg ON b.id = bg.id\n" +
                     "INNER JOIN genres g ON g.gid = bg.gid\n" +
-                    "WHERE g.gid=? SET NAMES 'utf8'");
+                    "WHERE g.gid=? ");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
             connection.close();
