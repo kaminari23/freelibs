@@ -62,7 +62,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
             PreparedStatement statement = null;
 
-            statement = connection.prepareStatement("SELECT * FROM booklist SET CHARACTER SET 'utf-8' SET NAMES 'utf-8'");
+            statement = connection.prepareStatement("SELECT * FROM booklist SET CHARACTER SET 'utf-8'");
 
             ResultSet resultSet = statement.executeQuery();
 
@@ -97,7 +97,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                     "FROM booklist b \n" +
                     "INNER JOIN bag bg ON b.id = bg.id\n" +
                     "INNER JOIN genres g ON g.gid = bg.gid\n" +
-                    "WHERE g.gid=? SET CHARACTER SET 'utf-8' SET NAMES 'utf-8'");
+                    "WHERE g.gid=? SET CHARACTER SET 'utf-8'");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
             connection.close();
@@ -135,7 +135,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                     "FROM booklist b \n" +
                     "INNER JOIN bag bg ON b.id = bg.id\n" +
                     "INNER JOIN genres g ON g.gid = bg.gid\n" +
-                    "WHERE g.gid=? SET CHARACTER SET 'utf-8' SET NAMES 'utf-8'");
+                    "WHERE g.gid=? SET CHARACTER SET 'utf-8' ");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
 
@@ -170,7 +170,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                     "FROM booklist b \n" +
                     "INNER JOIN bag bg ON b.id = bg.id\n" +
                     "INNER JOIN genres g ON g.gid = bg.gid\n" +
-                    "WHERE g.gid=? SET CHARACTER SET 'utf-8' SET NAMES 'utf-8'");
+                    "WHERE g.gid=? SET CHARACTER SET 'utf-8' ");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
 
@@ -198,7 +198,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         Connection connection = data_source.getConnection();
         PreparedStatement statement = null;
         try {
-            statement = connection.prepareStatement(" SELECT * FROM users WHERE uname LIKE ? AND upass LIKE ? SET CHARACTER SET 'utf-8' SET NAMES 'utf-8'");
+            statement = connection.prepareStatement(" SELECT * FROM users WHERE uname LIKE ? AND upass LIKE ? SET CHARACTER SET 'utf-8' ");
             statement.setString(1,uname);
             statement.setString(2,upass);
             ResultSet resultSet = statement.executeQuery();
@@ -224,7 +224,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         PreparedStatement statement = null;
 
         try {
-            statement = connection.prepareStatement(" SELECT * FROM booklist WHERE name LIKE ? SET CHARACTER SET 'utf-8' SET NAMES 'utf-8'");
+            statement = connection.prepareStatement(" SELECT * FROM booklist WHERE name LIKE ? SET CHARACTER SET 'utf-8'");
             statement.setString(1,name);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
@@ -250,7 +250,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         Connection connection = data_source.getConnection();
         PreparedStatement statement = null;
         try {
-            statement = connection.prepareStatement(" SELECT * FROM booklist INNER JOIN bag ON WHERE gid=? SET CHARACTER SET 'utf-8' SET NAMES 'utf-8'");
+            statement = connection.prepareStatement(" SELECT * FROM booklist INNER JOIN bag ON WHERE gid=? SET CHARACTER SET 'utf-8'");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
