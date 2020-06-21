@@ -59,7 +59,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         DatasourceImpl data_source = DatasourceImpl.getInstance();
         Connection connection = data_source.getConnection();
         try{
-            
+
 
             PreparedStatement statement = null;
             statement = connection.prepareStatement("SELECT * FROM booklist ");
