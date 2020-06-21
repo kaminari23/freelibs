@@ -54,6 +54,23 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         }
         return arrayList;
     }
+    public List<FreelibDTO> setEnc() {
+        List <FreelibDTO> arrayList = new ArrayList();
+        DatasourceImpl data_source = DatasourceImpl.getInstance();
+        Connection connection = data_source.getConnection();
+        try{
+
+            Statement statement = connection.createStatement();
+            String sql = "SET CLIENT_ENCODING='windows-1251'";
+           statement.executeQuery(sql);
+//            connection.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return arrayList;
+    }
+
     public List<FreelibDTO> getEver() {
         List <FreelibDTO> arrayList = new ArrayList();
         DatasourceImpl data_source = DatasourceImpl.getInstance();
@@ -62,7 +79,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
             PreparedStatement statement = null;
 
-            statement = connection.prepareStatement("SELECT * FROM booklist  SET CLIENT_ENCODING='windows-1251'");
+            statement = connection.prepareStatement("SELECT * FROM booklist ");
 
             ResultSet resultSet = statement.executeQuery();
 
@@ -97,7 +114,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                     "FROM booklist b \n" +
                     "INNER JOIN bag bg ON b.id = bg.id\n" +
                     "INNER JOIN genres g ON g.gid = bg.gid\n" +
-                    "WHERE g.gid=? SET CLIENT_ENCODING='windows-1251'");
+                    "WHERE g.gid=? ");
             statement.setInt(1,gid);
             ResultSet resultSet = statement.executeQuery();
             connection.close();
