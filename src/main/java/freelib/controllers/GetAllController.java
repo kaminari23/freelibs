@@ -16,8 +16,8 @@ import java.util.List;
 @WebServlet(name="getAll_controller", urlPatterns = "/list")
 public class GetAllController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setCharacterEncoding("windows-1251");
-        request.setCharacterEncoding("windows-1251");
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
         List<FreelibDTO> itemByRequest = InventoryServiceImpl.getInstance().getScifi();
         List<FreelibDTO> item = new ArrayList<>();
         item.addAll(itemByRequest);
@@ -32,8 +32,8 @@ public class GetAllController extends HttpServlet {
 
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setCharacterEncoding("windows-1251");
-        request.setCharacterEncoding("windows-1251");
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
         String name = request.getParameter("name");
 
         List<FreelibDTO> itemByRequest = InventoryServiceImpl.getInstance().getByName(name);

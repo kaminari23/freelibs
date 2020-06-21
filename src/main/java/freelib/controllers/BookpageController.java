@@ -17,8 +17,8 @@ import java.util.List;
 public class BookpageController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setCharacterEncoding("windows-1251");
-        request.setCharacterEncoding("windows-1251");
+        response.setCharacterEncoding("utf-8");
+        request.setCharacterEncoding("utf-8");
         String name = request.getParameter("name");
 
         List<FreelibDTO> itemByRequest = InventoryServiceImpl.getInstance().getByName(name);
