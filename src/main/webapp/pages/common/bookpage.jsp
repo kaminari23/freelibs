@@ -78,10 +78,10 @@
                         <h1><c:out value="${items.name}" /></h1>
                     </div>
                     <div class="bpg__author d-flex justify-content-center">
-                        <h3><c:out value="${items.author}" /></h3>
+                        <h2><c:out value="${items.author}" /></h2>
                     </div>
                     <div class="bpg__pubdate d-flex justify-content-center">
-                        <h3><c:out value="${items.pubdate}" /></h3>
+                        <h2><c:out value="${items.pubdate}" /></h2>
                     </div>
 
                 </div>
