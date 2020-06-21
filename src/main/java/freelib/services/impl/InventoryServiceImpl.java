@@ -59,11 +59,13 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         DatasourceImpl data_source = DatasourceImpl.getInstance();
         Connection connection = data_source.getConnection();
         try{
+            Statement statement1 = connection.createStatement();
+            String sql = "SET NAMES 'utf8'";
+            statement1.executeQuery(sql);
+
 
             PreparedStatement statement = null;
-            String sql = "SET NAMES 'utf8'";
             statement = connection.prepareStatement("SELECT * FROM booklist ");
-            statement.executeQuery(sql);
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
