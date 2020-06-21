@@ -1,44 +1,45 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Freelib</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/admin/css/bootstrap.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/admin/css/main.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/admin/webfonts/">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/admin/css/fontawesome.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/admin/css/all.min.css">
-</head>
-<body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-center">
-                <li class="active"><a href="#">Головна</a></li>
-                <li><a href="#">/</a></li>
-                <form method="post" action="${pageContext.request.contextPath}/list" class=menu__form >--%>
-                    <li><input name="name" class="menu__string" type="text" >
-                        <button class="menu__lupa"  ><i class="fas fa-search " type="submit"></i></button></li>
-                </form>
-                <li><a href="#">/</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
+<c:redirect url = "/list"/>
+<%--<!doctype html>--%>
+<%--<html lang="ru">--%>
+<%--<head>--%>
+<%--    <meta charset="UTF-8">--%>
+<%--    <meta name="viewport"--%>
+<%--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">--%>
+<%--    <meta http-equiv="X-UA-Compatible" content="ie=edge">--%>
+<%--    <title>Freelib</title>--%>
+<%--    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">--%>
+<%--    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">--%>
+<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/admin/css/bootstrap.min.css">--%>
+<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/admin/css/main.css">--%>
+<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/admin/webfonts/">--%>
+<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/admin/css/fontawesome.min.css">--%>
+<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/admin/css/all.min.css">--%>
+<%--</head>--%>
+<%--<body>--%>
+<%--<div class="navbar navbar-inverse navbar-fixed-top">--%>
+<%--    <div class="container">--%>
+<%--        <div class="navbar-header">--%>
+<%--            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">--%>
+<%--                <span class="icon-bar"></span>--%>
+<%--                <span class="icon-bar"></span>--%>
+<%--                <span class="icon-bar"></span>--%>
+<%--            </button>--%>
+<%--        </div>--%>
+<%--        <div class="navbar-collapse collapse">--%>
+<%--            <ul class="nav navbar-nav navbar-center">--%>
+<%--                <li class="active"><a href="#">Головна</a></li>--%>
+<%--                <li><a href="#">/</a></li>--%>
+<%--                <form method="post" action="${pageContext.request.contextPath}/list" class=menu__form >&ndash;%&gt;--%>
+<%--                    <li><input name="name" class="menu__string" type="text" >--%>
+<%--                        <button class="menu__lupa"  ><i class="fas fa-search " type="submit"></i></button></li>--%>
+<%--                </form>--%>
+<%--                <li><a href="#">/</a></li>--%>
+<%--            </ul>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</div>--%>
 <%--    <a class="navbar-brand" href="${pageContext.request.contextPath}/list">Головна</a>--%>
 
 <%--    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">--%>
