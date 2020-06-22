@@ -44,8 +44,9 @@
             <div class="col-4 ml-auto d-flex justify-content-center pr-2 py-1">
                 <form method="post" action="${pageContext.request.contextPath}/list" class=menu__form >
                     <li><input name="name" class="menu__string" type="text" >
-                        <a class="menu__lupa" type="submit" ><i class="fas fa-search "></i></a></li>
+                        <button class="menu__lupa"  ><i class="fas fa-search " type="submit"></i></button></li>
                 </form>
+
             </div>
 
             <div class="col-4 ml-auto d-flex justify-content-center">
