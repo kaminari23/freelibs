@@ -102,7 +102,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         return arrayList;
     }
     public List<FreelibDTO> getScifi() {
-        List <FreelibDTO> arrayList = new ArrayList();
+        List <FreelibDTO> arrrayList = new ArrayList();
         DatasourceImpl data_source = DatasourceImpl.getInstance();
         Connection connection = data_source.getConnection();
         try{
@@ -128,7 +128,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
                 String pubdate = resultSet.getString("pubdate");
 
 
-                arrayList.add(new FreelibDTO(id,name,annotation,author,picture,capacity,pubdate));
+                arrrayList.add(new FreelibDTO(id,name,annotation,author,picture,capacity,pubdate));
                 connection.close();
             }
         } catch (SQLException e) {
@@ -139,7 +139,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
 
 
 
-        return arrayList;
+        return arrrayList;
     }
     public List<FreelibDTO> getDetect() {
         List <FreelibDTO> arrayList = new ArrayList();
