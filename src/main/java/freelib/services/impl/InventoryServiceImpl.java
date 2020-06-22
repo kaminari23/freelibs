@@ -343,7 +343,7 @@ public class InventoryServiceImpl implements Service<Integer, InventoryDTO> {
         String upicture = "default";
         String urole = "USER";
         try{
-            statement = connection.prepareStatement("INSERT INTO book_list.users (uid, uname, upass, urole, upicture) VALUES (NULL , ?, ?, ?, ?)");
+            statement = connection.prepareStatement("INSERT INTO users (uid, uname, upass, urole, upicture) VALUES (NULL , ?, ?, ?, ?)");
                 statement.setString(1, uname);
                 statement.setString(2, upass);
                 statement.setString(3, upicture);

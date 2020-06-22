@@ -53,7 +53,7 @@
                     <ul class="menu">
                         <li class="menu__login">
                             <a href="${pageContext.request.contextPath}/pages/admin/admin_login.jsp">
-                                Увійти <c:forEach var="users" items="${user}"><c:out value="${users.picture}" /></c:forEach>
+                                <c:forEach var="users" items="${user}"><c:out value="${users.picture}" /></c:forEach>
                             </a>
                         </li>
                     </ul>
