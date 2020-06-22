@@ -148,7 +148,7 @@
                                     <button type="submit" class="item__redir"><c:out value="${items.name}" /></button>
                                 </form>
                                     <%--                            </form>--%>
-                                <h3><c:out value="${items.author}" /></h3>
+                                <h4><c:out value="${items.author}" /></h4>
                             </div>
                         </div>
                     </div>

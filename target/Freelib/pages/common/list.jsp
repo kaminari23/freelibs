@@ -78,33 +78,33 @@
 </section>
 <section class="main">
 
+<%--    <section class="content">--%>
+<%--        <div class="container">--%>
+<%--            <h1>Останні новинки з жанру Наукова фантастика:</h1>--%>
+<%--            <div class="row">--%>
+
+<%--                <div class="col col-md-2">--%>
+<%--                    <div class="cnt d-flex justify-content-center">--%>
+<%--                        <c:forEach var="items" items="${item}">--%>
+<%--                        <div class="cnt__item ">--%>
+<%--                            <img src="<c:out value="${items.picture}" />" width=100% height="150px">--%>
+
+<%--                            <form method="post" action="${pageContext.request.contextPath}/bookpage">--%>
+<%--                                <input hidden name="name" value="<c:out value="${items.name}" />">--%>
+<%--                            <button type="submit" class="item__redir"><c:out value="${items.name}" /></button>--%>
+<%--                            </form>--%>
+<%--                            <h4><c:out value="${items.author}" /></h4>--%>
+<%--                        </div>--%>
+<%--                        </c:forEach>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </section>--%>
     <section class="content">
         <div class="container">
-            <h1>Останні новинки з жанру Наукова фантастика:</h1>
-            <div class="row">
-
-                <div class="col col-md-2">
-                    <div class="cnt d-flex justify-content-center">
-                        <c:forEach var="items" items="${item}">
-                        <div class="cnt__item ">
-                            <img src="<c:out value="${items.picture}" />" width=100% height="150px">
-
-                            <form method="post" action="${pageContext.request.contextPath}/bookpage">
-                                <input hidden name="name" value="<c:out value="${items.name}" />">
-                            <button type="submit" class="item__redir"><c:out value="${items.name}" /></button>
-                            </form>
-                            <h3><c:out value="${items.author}" /></h3>
-                        </div>
-                        </c:forEach>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <section class="content">
-        <div class="container">
-            <h1>Останні новинки з жанру Детектив:</h1>
+            <h1>Останні новинки:</h1>
             <div class="row">
                 <c:forEach var="itemr" items="${itemR}">
                     <div class="col col-md-2">

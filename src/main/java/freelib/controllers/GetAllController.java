@@ -21,7 +21,7 @@ public class GetAllController extends HttpServlet {
         List<FreelibDTO> itemByRequest = InventoryServiceImpl.getInstance().getScifi();
         List<FreelibDTO> item = new ArrayList<>();
         item.addAll(itemByRequest);
-        List<FreelibDTO> itemByR = InventoryServiceImpl.getInstance().getDetect();
+        List<FreelibDTO> itemByR = InventoryServiceImpl.getInstance().getEver();
         List<FreelibDTO> itemR = new ArrayList<>();
         itemR.addAll(itemByR);
 
