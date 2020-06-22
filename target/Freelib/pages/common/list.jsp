@@ -82,23 +82,23 @@
         <div class="container">
             <h1>Останні новинки з жанру Наукова фантастика:</h1>
             <div class="row">
-                <c:forEach var="items" items="${item}">
+
                 <div class="col col-md-2">
                     <div class="cnt d-flex justify-content-center">
+                        <c:forEach var="items" items="${item}">
                         <div class="cnt__item ">
                             <img src="<c:out value="${items.picture}" />" width=100% height="150px">
-<%--                            <form method="post" action="${pageContext.request.contextPath}/list">--%>
-<%--                                --%>
+
                             <form method="post" action="${pageContext.request.contextPath}/bookpage">
                                 <input hidden name="name" value="<c:out value="${items.name}" />">
                             <button type="submit" class="item__redir"><c:out value="${items.name}" /></button>
                             </form>
-<%--                            </form>--%>
                             <h3><c:out value="${items.author}" /></h3>
                         </div>
+                        </c:forEach>
                     </div>
                 </div>
-</c:forEach>
+
             </div>
         </div>
     </section>
