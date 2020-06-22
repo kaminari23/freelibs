@@ -26,7 +26,7 @@ public class LoginController extends HttpServlet {
        List<UserDTO> item = new ArrayList<>();
         item.addAll(itemByRequest);
         request.setAttribute("user", item);
-        request.getServletContext().getRequestDispatcher("/pages/common/list.jsp").forward(request,response);
+        request.getServletContext().getRequestDispatcher("/pages/common/listauthorized.jsp").forward(request,response);
     }
 //
 //    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
